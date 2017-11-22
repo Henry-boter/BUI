@@ -6,6 +6,7 @@ import VueRouter from 'vue-router'
 import App from './App'
 import Home from './components/helloFromVux'
 import hello from './components/hello'
+import demo from './pages/demo'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,9 @@ const routes = [
   }, {
     path: '/hello',
     component: hello
+  }, {
+    path: '/demo',
+    component: demo
   }]
 
 const router = new VueRouter({
