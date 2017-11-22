@@ -4,7 +4,7 @@
     <div>
       <input type="text" placeholder="请选择考场">
     </div>
-    <checklist></checklist>
+    <checklist :max="2"></checklist>
   </div>
 </template>
 <script>
