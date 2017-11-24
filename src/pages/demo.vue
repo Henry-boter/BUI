@@ -2,9 +2,9 @@
   <div class="cl-div">
     <div class="center">checklist demo</div>
     <div>
-      <input type="text" placeholder="请选择考场">
+      <input type="text" @focus="openChecklist" placeholder="请选择考场">
     </div>
-    <checklist :max="2"></checklist>
+    <checklist :max="2" ref="checklist"></checklist>
   </div>
 </template>
 <script>
@@ -12,6 +12,11 @@
   export default {
     components: {
       checklist
+    },
+    methods: {
+      openChecklist () {
+        this.$refs['checklist'].show()
+      }
     }
   }
 </script>

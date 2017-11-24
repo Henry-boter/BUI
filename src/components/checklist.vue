@@ -1,7 +1,7 @@
 <template>
-    <div class="cl-checklist">
+    <div class="cl-checklist" :class="{show: isOpen}">
       <div class="topbar">
-        <span class="cancel">取消</span>
+        <span class="cancel" @click="hide">取消</span>
         <span class="title">选择考场</span>
         <span class="confirm">完成</span>
       </div>
@@ -54,6 +54,7 @@ export default {
   },
   data () {
     return {
+      isOpen: false,
       checkboxValue: []
     }
   },
@@ -83,6 +84,12 @@ export default {
     }
   },
   methods: {
+    show () {
+      this.isOpen = true
+    },
+    hide () {
+      this.isOpen = false
+    },
     selectedItem (event) {
       const labelNode = event.target.previousElementSibling
       const classList = labelNode.classList
@@ -94,6 +101,15 @@ export default {
 <style scoped="scoped">
   .cl-checklist{
     overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: all .5s;
+    transform: translateY(100%);
+  }
+  .cl-checklist.show{
+    transform: translateY(0%);
   }
 .topbar{
   display: flex;
