@@ -1,46 +1,49 @@
 <template>
-    <div class="cl-checklist" :class="{show: isOpen}">
-      <div class="topbar">
-        <span class="cancel" @click="hide">取消</span>
-        <span class="title">选择考场</span>
-        <span class="confirm">完成</span>
+    <div class="cl-checklist">
+      <div class="checklist" :class="{'show': isOpen}">
+        <div class="topbar">
+          <span class="cancel" @click="hide">取消</span>
+          <span class="title">选择考场</span>
+          <span class="confirm">完成</span>
+        </div>
+        <div class="desc">您已选中{{checkboxValue.length}}个，最多已选{{max}}个</div>
+        <div class="list" ref="list">
+          <div class="line-wrapper">
+            <label for="1" class="line border-1px">
+              <div class="l">
+                <div class="title">科目二第07考点马路</div>
+                <div class="address">上海市宝山区宝安公路2009号</div>
+              </div>
+              <div class="r"></div>
+            </label>
+            <input type="checkbox" id="1" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="1">
+          </div>
+
+          <div class="line-wrapper">
+            <label for="2" class="line border-1px">
+              <div class="l">
+                <div class="title">科目二第07考点马路</div>
+                <div class="address">上海市宝山区宝安公路2009号</div>
+              </div>
+              <div class="r"></div>
+            </label>
+            <input type="checkbox" id="2" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="2">
+          </div>
+
+          <div class="line-wrapper">
+            <label for="3" class="line border-1px">
+              <div class="l">
+                <div class="title">科目二第07考点马路</div>
+                <div class="address">上海市宝山区宝安公路2009号</div>
+              </div>
+              <div class="r"></div>
+            </label>
+            <input type="checkbox" id="3" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="3">
+          </div>
+
+        </div>
       </div>
-      <div class="desc">您已选中{{checkboxValue.length}}个，最多已选{{max}}个</div>
-      <div class="list" ref="list">
-        <div class="line-wrapper">
-          <label for="1" class="line border-1px">
-            <div class="l">
-              <div class="title">科目二第07考点马路</div>
-              <div class="address">上海市宝山区宝安公路2009号</div>
-            </div>
-            <div class="r"></div>
-          </label>
-          <input type="checkbox" id="1" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="1">
-        </div>
-
-        <div class="line-wrapper">
-          <label for="2" class="line border-1px">
-            <div class="l">
-              <div class="title">科目二第07考点马路</div>
-              <div class="address">上海市宝山区宝安公路2009号</div>
-            </div>
-            <div class="r"></div>
-          </label>
-          <input type="checkbox" id="2" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="2">
-        </div>
-
-        <div class="line-wrapper">
-          <label for="3" class="line border-1px">
-            <div class="l">
-              <div class="title">科目二第07考点马路</div>
-              <div class="address">上海市宝山区宝安公路2009号</div>
-            </div>
-            <div class="r"></div>
-          </label>
-          <input type="checkbox" id="3" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="3">
-        </div>
-
-      </div>
+      <div class="checklist-overlay" v-if="isOpen" @click="hide"></div>
     </div>
 </template>
 
@@ -85,6 +88,7 @@ export default {
   },
   methods: {
     show () {
+      document.activeElement.blur()
       this.isOpen = true
     },
     hide () {
@@ -101,14 +105,30 @@ export default {
 <style scoped="scoped">
   .cl-checklist{
     overflow: hidden;
+  }
+  .checklist-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, .5);
+    transition: all .5s;
+  }
+  .checklist{
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 2000;
     width: 100%;
+    background-color: #fff;
+    -webkit-transition: all .5s;
     transition: all .5s;
+    -webkit-transform: translateY(100%);
     transform: translateY(100%);
   }
-  .cl-checklist.show{
+  .checklist.show{
     transform: translateY(0%);
   }
 .topbar{
