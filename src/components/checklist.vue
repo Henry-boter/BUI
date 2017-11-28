@@ -7,6 +7,7 @@
           <span class="confirm">完成</span>
         </div>
         <div class="desc">您已选中{{checkboxValue.length}}个，最多已选{{max}}个</div>
+
         <div class="list" ref="list">
           <div class="line-wrapper">
             <label for="1" class="line border-1px">
