@@ -1,45 +1,23 @@
 <template>
     <div class="cl-checklist">
-      <div class="checklist" :class="{'show': isOpen}">
+      <div class="checklist" :class="{show: isOpen}">
         <div class="topbar">
           <span class="cancel" @click="hide">取消</span>
           <span class="title">选择考场</span>
-          <span class="confirm">完成</span>
+          <span class="confirm" @click="onConfirm">完成</span>
         </div>
         <div class="desc">您已选中{{checkboxValue.length}}个，最多已选{{max}}个</div>
 
         <div class="list" ref="list">
-          <div class="line-wrapper">
-            <label for="1" class="line border-1px">
+          <div class="line-wrapper" v-for="(item, index) in dataList" :data-val="item.label + '|' + item.value">
+            <label :for="index" class="line border-1px">
               <div class="l">
-                <div class="title">科目二第07考点马路</div>
-                <div class="address">上海市宝山区宝安公路2009号</div>
+                <div class="title">{{item.label}}</div>
+                <div class="address" v-if="item.address">{{item.address}}</div>
               </div>
               <div class="r"></div>
             </label>
-            <input type="checkbox" id="1" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="1">
-          </div>
-
-          <div class="line-wrapper">
-            <label for="2" class="line border-1px">
-              <div class="l">
-                <div class="title">科目二第07考点马路</div>
-                <div class="address">上海市宝山区宝安公路2009号</div>
-              </div>
-              <div class="r"></div>
-            </label>
-            <input type="checkbox" id="2" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="2">
-          </div>
-
-          <div class="line-wrapper">
-            <label for="3" class="line border-1px">
-              <div class="l">
-                <div class="title">科目二第07考点马路</div>
-                <div class="address">上海市宝山区宝安公路2009号</div>
-              </div>
-              <div class="r"></div>
-            </label>
-            <input type="checkbox" id="3" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" value="3">
+            <input type="checkbox" :id="index" @click="selectedItem($event)" v-model="checkboxValue" style="display: none" :value="item.label + '|' + item.value">
           </div>
 
         </div>
@@ -54,6 +32,10 @@ export default {
     max: {
       type: Number,
       default: 0
+    },
+    dataList: {
+      type: Array,
+      require: true
     }
   },
   data () {
@@ -99,6 +81,19 @@ export default {
       const labelNode = event.target.previousElementSibling
       const classList = labelNode.classList
       classList.contains('selected') ? classList.remove('selected') : classList.add('selected')
+    },
+    onConfirm () {
+      this.isOpen = false
+      const checkboxValue = this.checkboxValue
+      const res = []
+      for (let i = 0; i < checkboxValue.length; i++) {
+        const resObj = {}
+        const item = checkboxValue[i].split('|')
+        resObj.label = item[0]
+        resObj.value = item[1]
+        res.push(resObj)
+      }
+      this.$emit('on-change', res)
     }
   }
 }
