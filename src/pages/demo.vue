@@ -5,7 +5,12 @@
       <input type="text" @focus="openChecklist" placeholder="请选择考场">
     </div>
     <p v-for="(item, index) in kaochangVal">{{item.label}}</p>
-    <checklist :max="2" ref="checklist" :data-list="data" @on-change="changeKaochangValue"></checklist>
+    <checklist
+      :max="2" ref="checklist"
+      :data-list="data"
+      :checkbox-left="false"
+      @on-change="changeKaochangValue">
+    </checklist>
   </div>
 </template>
 <script>

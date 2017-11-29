@@ -10,7 +10,7 @@
 
         <div class="list" ref="list">
           <div class="line-wrapper" v-for="(item, index) in dataList" :data-val="item.label + '|' + item.value">
-            <label :for="index" class="line border-1px">
+            <label :for="index" class="line border-1px" :class="{'checkbox-left': checkboxLeft}">
               <div class="l">
                 <div class="title">{{item.label}}</div>
                 <div class="address" v-if="item.address">{{item.address}}</div>
@@ -36,6 +36,10 @@ export default {
     dataList: {
       type: Array,
       require: true
+    },
+    checkboxLeft: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -163,6 +167,9 @@ export default {
     justify-content: center;
     align-items: center;
     /*height: 50px;*/
+  }
+  .list .line.checkbox-left{
+    flex-direction: row-reverse;
   }
   .list .line .l{
     display: flex;
