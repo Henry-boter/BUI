@@ -1,4 +1,4 @@
-# vux_app
+# BUI
 
 > A Vue.js project
 
