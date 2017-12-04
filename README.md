@@ -1,6 +1,7 @@
 # BUI
 
 > A Vue.js project
+> 预览地址：https://henry-boter.github.io/BUI-view/
 
 ## Build Setup
 
