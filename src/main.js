@@ -7,20 +7,16 @@ import App from './App'
 import Home from './pages/Home.vue'
 import hello from './components/hello'
 import demo from './pages/demo'
+import demoPage from './pages/DemoPage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    component: Home
-  }, {
-    path: '/hello',
-    component: hello
-  }, {
-    path: '/demo',
-    component: demo
-  }]
+  {path: '/', component: Home},
+  {path: '/hello', component: hello},
+  {path: '/demo', component: demo},
+  {path: '/demoPage', component: demoPage}
+]
 
 const router = new VueRouter({
   routes

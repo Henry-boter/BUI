@@ -2,14 +2,11 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
+      <a href="https://cn.vuejs.org/" target="_blank">Vue中文官网</a>
+      <a href="https://forum.vuejs.org" target="_blank">Forum</a>
+      <a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a>
+      <a href="https://twitter.com/vuejs" target="_blank">Twitter</a>
+      <a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a>
     <h2>Vue 全家桶</h2>
     <ul>
       <li><a href="https://router.vuejs.org/zh-cn/" target="_blank">vue-router</a></li>
@@ -25,7 +22,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'vue开发你必须知道'
     }
   }
 }
@@ -35,19 +32,12 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+  font-size: 18px;
+  text-align: center;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
 a {
   color: #42b983;
+  display: block;
+  text-align: center;
 }
 </style>

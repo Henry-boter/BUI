@@ -5,7 +5,8 @@
       <h1> BUI </h1>
     </div>
     <group>
-      <cell title="欢迎进入BUI" value="so cool" link="/hello" is-link></cell>
+      <cell title="Vue学习路径" value="so cool" link="/hello" is-link></cell>
+      <cell title="Demo" value="演示" link="/demoPage" is-link></cell>
     </group>
   </div>
 </template>
@@ -26,7 +27,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .vux-demo {
     text-align: center;
   }
