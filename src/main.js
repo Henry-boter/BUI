@@ -1,26 +1,27 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import FastClick from 'fastclick'
-import VueRouter from 'vue-router'
 import App from './App'
-import Home from './pages/Home.vue'
-import hello from './components/hello'
-import demo from './pages/demo'
-import demoPage from './pages/DemoPage.vue'
+import FastClick from 'fastclick'
+import router from './router'
 
-Vue.use(VueRouter)
+// import Home from './pages/Home.vue'
+// import hello from './components/hello'
+// import demo from './pages/demo'
+// import demoPage from './pages/DemoPage.vue'
 
-const routes = [
-  {path: '/', component: Home},
-  {path: '/hello', component: hello},
-  {path: '/demo', component: demo},
-  {path: '/demoPage', component: demoPage}
-]
+// Vue.use(VueRouter)
 
-const router = new VueRouter({
-  routes
-})
+// const routes = [
+//   {path: '/', component: Home},
+//   {path: '/hello', component: hello},
+//   {path: '/demo', component: demo},
+//   {path: '/demoPage', component: demoPage}
+// ]
+
+// const router = new VueRouter({
+//   routes
+// })
 
 FastClick.attach(document.body)
 
