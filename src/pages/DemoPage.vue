@@ -6,6 +6,7 @@
         <div class="pageItem"></div>
         <div class="pageItem"></div>
       </div>
+      <vue-event-calendar :events="demoEvents" @monthChanged="" @dayChanged=""></vue-event-calendar>
     </div>
 </template>
 
