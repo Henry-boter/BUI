@@ -5,24 +5,6 @@ import App from './App'
 import FastClick from 'fastclick'
 import router from './router'
 
-// import Home from './pages/Home.vue'
-// import hello from './components/hello'
-// import demo from './pages/demo'
-// import demoPage from './pages/DemoPage.vue'
-
-// Vue.use(VueRouter)
-
-// const routes = [
-//   {path: '/', component: Home},
-//   {path: '/hello', component: hello},
-//   {path: '/demo', component: demo},
-//   {path: '/demoPage', component: demoPage}
-// ]
-
-// const router = new VueRouter({
-//   routes
-// })
-
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false

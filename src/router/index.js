@@ -4,6 +4,7 @@ import Home from './../pages/Home.vue'
 import hello from './../components/hello'
 import demo from './../pages/demo'
 import demoPage from './../pages/DemoPage.vue'
+import dialogList from './../pages/DialogList.vue'
 
 Vue.use(Router)
 
@@ -12,6 +13,7 @@ export default new Router({
     {path: '/', component: Home},
     {path: '/hello', component: hello},
     {path: '/demo', component: demo},
-    {path: '/demoPage', component: demoPage}
+    {path: '/demoPage', component: demoPage},
+    {path: '/dialogList', component: dialogList}
   ]
 })
