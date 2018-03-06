@@ -23,6 +23,14 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+//  mock数据
+var router = express.Router();
+var address = require('./../mock/address.json');
+router.get("/address", function (req, res, next) {
+  res.json(address)
+})
+app.use(router)
+//  mock数据结束
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
