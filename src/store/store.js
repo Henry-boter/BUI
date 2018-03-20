@@ -19,9 +19,10 @@ store.registerModule('vux', { // 名字自己定义
     }
   },
   mutations: {
+    //  修改loading状态
     updateLoadingStatus (state, payload) {
-      state.loading = payload.loading
-      console.log(state.loading)
+      state.isLoading = payload.isLoading
+      console.log(state.isLoading)
     },
     getCustomer (state, customer) {
       state.customer.nick = customer
