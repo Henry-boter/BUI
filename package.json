@@ -19,7 +19,8 @@
     "vue-router": "^2.8.1",
     "vuex": "^2.5.0",
     "vuex-i18n": "^1.8.0",
-    "vux": "^2.7.4"
+    "vux": "^2.7.4",
+    "jsonp": "^0.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

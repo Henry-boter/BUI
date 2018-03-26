@@ -10,6 +10,7 @@
       <cell title="Vue学习路径" value="so cool" link="/hello" is-link></cell>
       <cell title="Demo" value="演示" link="/demoPage" is-link></cell>
       <cell title="checkList组件" link="/demo"></cell>
+      <cell title="jsonp请求" link="/jsonp"></cell>
     </group>
   </div>
 </template>
