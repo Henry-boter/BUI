@@ -21,6 +21,9 @@
       _getRecommend () {
         getRecommend().then((res) => {
           console.log(res)
+          if (res.code === 0) {
+            console.log(res.data)
+          }
         })
       }
     }
