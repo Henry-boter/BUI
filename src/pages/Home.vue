@@ -11,6 +11,7 @@
       <cell title="Demo" value="演示" link="/demoPage" is-link></cell>
       <cell title="checkList组件" link="/demo"></cell>
       <cell title="jsonp请求" link="/jsonp"></cell>
+      <cell title="scrollView" link="/scrollView"></cell>
     </group>
   </div>
 </template>
