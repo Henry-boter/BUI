@@ -1,6 +1,7 @@
 <template>
     <div class="hello">
         <h1>{{ msg }}</h1>
+      <p>{{result}}</p>
     </div>
 </template>
 
@@ -11,7 +12,8 @@
     name: 'hello',
     data () {
       return {
-        msg: '这是一个jsonp请求页面'
+        msg: '这是一个jsonp请求页面',
+        result: null
       }
     },
     created () {
@@ -22,7 +24,8 @@
         getRecommend().then((res) => {
           console.log(res)
           if (res.code === 0) {
-            console.log(res.data)
+            this.result = res.data
+            console.log(this.result)
           }
         })
       }
